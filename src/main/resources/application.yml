@@ -1,0 +1,118 @@
+spring:
+  profiles: 
+    active: local
+  application:
+    name: "${IMAGE_NAME:template-spring-boot}"
+  cloud:
+    stream:
+      bindings:     
+        cargoBookingChannel:
+          destination: cargoBookings
+          group: cargoBookingsQueue
+        cargoRoutingChannel:
+          destination: cargoRoutings 
+          group: cargoRoutingsQueue
+        cargoHandlingChannel2:
+          destination: cargoHandlings2
+          group: cargoHandlingsQueue2   
+          contentType: 'application/json'                                      
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST
+    username: root
+    password: password
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest   
+
+swagger:
+  baseApiPackage:
+  - "com.cargotracker"
+  - "com.ibm.health"
+  title: "cargo-booking-service"
+  description: "cargo-booking-service"
+  version: "1.0.0"
+  termsOfServiceUrl: ""
+
+  license: "MIT"
+  licenseUrl: ""
+
+management:
+  endpoints:
+    web:
+      base-path: "/metrics"
+      exposure:
+        include: "*"
+
+server:
+  port: ${PORT:8001}
+
+logging:
+  level:
+    ROOT: ${LOG_LEVEL:INFO}
+    org.springframework: ERROR
+    org.springframework.web: WARN
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    ch.qos.logback.classic: ERROR
+  pattern:
+    console: "%d{YYYY-dd-MM HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %X{X-B3-TraceId:-} ${spring.application.name} %logger{39}.%M %L - %msg%n"
+---
+spring:
+  profiles: ocp
+  application:
+    name: "${IMAGE_NAME:template-spring-boot}"
+  cloud:
+    stream:
+      bindings:     
+        cargoBookingChannel:
+          destination: cargoBookings
+          group: cargoBookingsQueue
+        cargoRoutingChannel:
+          destination: cargoRoutings 
+          group: cargoRoutingsQueue
+        cargoHandlingChannel2:
+          destination: cargoHandlings2
+          group: cargoHandlingsQueue2   
+          contentType: 'application/json'                                      
+  datasource:
+    url: ${bookingdburl}
+    username: ${bookingdb.user.name}
+    password: ${bookingdb.user.password}
+  rabbitmq:
+    host: ${rabbitmqhost}
+    port: ${rabbitmqport}
+    username: ${rabbitmq.user.name}
+    password: ${rabbitmq.user.password}   
+
+swagger:
+  baseApiPackage:
+  - "com.cargotracker"
+  - "com.ibm.health"
+  title: "cargo-booking-service"
+  description: "cargo-booking-service"
+  version: "1.0.0"
+  termsOfServiceUrl: ""
+
+  license: "MIT"
+  licenseUrl: ""
+
+management:
+  endpoints:
+    web:
+      base-path: "/metrics"
+      exposure:
+        include: "*"
+
+server:
+  port: ${PORT:8001}
+
+logging:
+  level:
+    ROOT: ${LOG_LEVEL:INFO}
+    org.springframework: ERROR
+    org.springframework.web: WARN
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    ch.qos.logback.classic: ERROR
+  pattern:
+    console: "%d{YYYY-dd-MM HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %X{X-B3-TraceId:-} ${spring.application.name} %logger{39}.%M %L - %msg%n"

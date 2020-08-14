@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  bookingdburl: "{{ .Values.datasources.dburl }}"
+  rabbitmqhost: "{{ .Values.datasources.mqhost }}"
+  rabbitmqport: "{{ .Values.datasources.mqport }}" 
+kind: ConfigMap
+metadata:
+  name: booking-config
