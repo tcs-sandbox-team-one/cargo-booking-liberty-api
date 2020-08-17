@@ -1,4 +1,4 @@
-FROM openjdk:8 AS build-stage
+FROM adoptopenjdk:8u262-b10-jre-openj9-0.21.0 AS build-stage
 
 RUN apt-get update && \
     apt-get install -y maven unzip
