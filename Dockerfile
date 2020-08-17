@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:8 AS build-stage
 
 RUN apt-get update && \
     apt-get install -y maven unzip
@@ -7,7 +7,7 @@ COPY . /project
 WORKDIR /project
 
 #RUN mvn -X initialize process-resources verify => to get dependencies from maven
-RUN mvn clean install	
+RUN mvn install	
 #RUN mvn --version
 RUN mvn --version
 
