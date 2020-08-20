@@ -17,7 +17,7 @@ spring:
           group: cargoHandlingsQueue2   
           contentType: 'application/json'                                      
   datasource:
-    url: jdbc:mysql://localhost:3306/bookingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST
+    url: jdbc:mysql://10.242.0.6:3306/bookingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST
     username: root
     password: password
   rabbitmq:
