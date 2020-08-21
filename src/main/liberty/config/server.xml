@@ -17,7 +17,9 @@
     <!-- Declare the jar files for MySQL access through JDBC. -->
     <dataSource id="cargo-booking-service" jndiName="jdbc/bookingmsdb">
         <jdbcDriver libraryRef="MySQLLib"/>
-        <properties databaseName="bookingmsdb" password="password" portNumber="3306" serverName="10.242.0.6" serverTimezone="EST" user="bookingmsdb"/>
+        <properties databaseName="bookingmsdb" password="password" portNumber="3306" serverName="10.242.0.6" 
+        serverTimezone="EST" user="bookingmsdb" URL="jdbc:mysql://10.242.0.6:3306/bookingmsdb"/>
+        
     </dataSource>
     <library id="MySQLLib">
         <file name="${server.config.dir}/lib/mysql-connector-java-8.0.21.jar"/>
