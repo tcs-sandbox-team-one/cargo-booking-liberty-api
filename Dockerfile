@@ -16,7 +16,7 @@ RUN mkdir -p /config/apps && \
     cp ./src/main/liberty/config/server.xml /config && \
     cp ./target/cargo-booking-service-1.0.war /config/apps/cargo-booking-service-1.0.war && \
     if [ ! -z "$(ls ./src/main/liberty/lib)" ]; then \
-        cp ./src/main/liberty/lib/mysql-connector-java-8.0.17.jar /config/lib/mysql-connector-java-8.0.17.jar; \
+        cp ./src/main/liberty/lib/mysql-connector-java-8.0.21.jar /config/lib/mysql-connector-java-8.0.21.jar; \
     fi
 
 #FROM ibmcom/websphere-liberty:webProfile7-ubi-min-amd64

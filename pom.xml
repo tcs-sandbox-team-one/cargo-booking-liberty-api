@@ -20,6 +20,7 @@
 		<java.version>1.8</java.version>
 		<httpclient.version>4.5.12</httpclient.version>
 		<spring-cloud-starter-sleuth.version>2.1.1</spring-cloud-starter-sleuth.version>
+		<mysql-connector-java.version>8.0.21</mysql-connector-java.version>
 		<!-- <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
 		<springfox-swagger-ui.version>3.0.0</springfox-swagger-ui.version> -->
 	</properties>
@@ -117,7 +118,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
+			</dependency>
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-api-mockito2</artifactId>
