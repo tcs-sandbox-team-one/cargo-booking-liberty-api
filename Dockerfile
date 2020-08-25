@@ -22,7 +22,7 @@ RUN mkdir -p /config/apps && \
 #FROM ibmcom/websphere-liberty:webProfile7-ubi-min-amd64
 FROM websphere-liberty:webProfile8
 
-ARG SSL=true
+ARG SSL=false
 
 ARG MP_MONITORING=true
 ARG HTTP_ENDPOINT=false
