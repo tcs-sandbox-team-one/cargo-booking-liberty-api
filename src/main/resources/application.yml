@@ -77,8 +77,8 @@ spring:
           contentType: 'application/json'                                      
   datasource:
     url: ${bookingdburl}
-    username: ${bookingdb.user.name}
-    password: ${bookingdb.user.password}
+    username: bookingmsdb
+    password: bookingmsdb
   rabbitmq:
     host: ${rabbitmqhost}
     port: ${rabbitmqport}
