@@ -63,22 +63,22 @@ spec:
               value: {{ .Values.logLevel | quote }}
             - name: SPRING_PROFILES_ACTIVE
               value: {{ .Values.profiles.active | quote }}
-            - name: bookingdb.user.name
+            - name: BOOKINGDB_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: cargotracker-booking-credentials
                   key: bookingdb.user.name
-            - name: bookingdb.user.password
+            - name: BOOKINGDB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: cargotracker-booking-credentials
                   key: bookingdb.user.password
-            - name: rabbitmq.user.name
+            - name: RABBITMQ_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: cargotracker-booking-credentials
                   key: rabbitmq.user.name
-            - name: rabbitmq.user.password
+            - name: RABBITMQ_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: cargotracker-booking-credentials

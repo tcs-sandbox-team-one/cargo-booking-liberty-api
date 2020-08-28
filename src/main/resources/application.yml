@@ -77,13 +77,13 @@ spring:
           contentType: 'application/json'                                      
   datasource:
     url: ${bookingdburl}
-    username: bookingmsdb
-    password: bookingmsdb
+    username: ${BOOKINGDB_USERNAME}
+    password: ${BOOKINGDB_PASSWORD}
   rabbitmq:
     host: ${rabbitmqhost}
     port: ${rabbitmqport}
-    username: ${rabbitmq.user.name}
-    password: ${rabbitmq.user.password}   
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}   
 
 swagger:
   baseApiPackage:
