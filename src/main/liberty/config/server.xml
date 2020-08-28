@@ -30,5 +30,5 @@
 
     <applicationMonitor updateTrigger="mbean"/>
 
-    <webApplication id="cargo-booking-service" location="cargo-booking-service-1.0.war" name="cargo-booking-service"/>
+    <webApplication id="cargo-booking-service" location="cargo-booking-service-1.0.war" contextRoot="/"/>
 </server>
