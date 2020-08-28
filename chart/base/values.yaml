@@ -16,7 +16,7 @@ credentials:
   mqpassword: "cGFzc3cwcmQ="
 
 datasources:
-  dburl: "jdbc:mysql://mysql-cargo-dev.bluecargo-dev:3306/bookingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST"
+  dburl: "jdbc:mysql://mysql-cargo-dev.bluecargo-dev:3306/bookingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST&useSSL=false"
   mqhost: "rabbitmq-cargo-dev-headless"
   mqport: "5672"
 
