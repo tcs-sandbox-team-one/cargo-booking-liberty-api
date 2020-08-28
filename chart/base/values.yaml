@@ -16,15 +16,15 @@ credentials:
   mqpassword: "cGFzc3cwcmQ="
 
 datasources:
-  dburl: "jdbc:mysql://mysql-dev:3306/bookingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST"
-  mqhost: "rabbitmq-dev-headless"
+  dburl: "jdbc:mysql://mysql-cargo-dev:3306/bookingmsdb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=EST&useSSL=false&allowPublicKeyRetrieval=true"
+  mqhost: "rabbitmq-cargo-dev-headless"
   mqport: "5672"
 
 image:
   repository: replace
   tag: replace
   pullPolicy: IfNotPresent
-  port: 8001
+  port: 9081
 
 nameOverride: ""
 fullnameOverride: ""
@@ -51,11 +51,11 @@ ingress:
 #  tlsSecretName: ""
 
 vcsInfo:
-  repoUrl: "https://github.com/tcs-sandbox-team-one/cargotracker-org-booking.git"
+  repoUrl: "https://github.com/tcs-sandbox-team-one/cargo-booking-liberty-api.git"
   branch: "master"
 
 partOf: "cargotracker-backend-dev"
 
-connectsTo: "mysql-dev, rabbitmq-dev, cargotracker-org-routing"
+connectsTo: "mysql-cargo-dev, rabbitmq-cargo-dev, cargo-routing-liberty-api"
 
-runtime: spring
+runtime: liberty
