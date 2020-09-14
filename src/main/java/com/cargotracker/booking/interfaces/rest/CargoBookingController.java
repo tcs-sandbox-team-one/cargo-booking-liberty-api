@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller    // This means that this class is a Controller
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/cargobooking")
 public class CargoBookingController {
 
